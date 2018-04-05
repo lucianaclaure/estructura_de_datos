@@ -1,0 +1,110 @@
+Circulo.h
+
+
+#pragma once
+class Circulo
+{
+private:
+	float r;
+public:
+	Circulo(void);
+	~Circulo(void);
+	float calperimetro(float r);
+	float calarea(float r);
+};
+
+
+
+
+
+Circulo.cpp
+
+
+#include "StdAfx.h"
+#include "Circulo.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+
+Circulo::Circulo(void)
+{
+}
+
+
+Circulo::~Circulo(void)
+{
+}
+https://github.com/lucianaclaure
+float Circulo::calperimetro(float r)
+{float pi=3.14;
+float p;
+
+
+p=2*pi*r;
+
+return p;
+}
+	
+float Circulo::calarea(float r)
+{float pi=3.14;
+float a;
+
+a=pi*r*r;
+
+return a;
+
+
+}
+
+
+
+
+
+prueba.cpp
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "circulo.h"
+using namespace std;
+
+
+void main()
+{
+	int opcion;
+    float r;
+    
+	Circulo cir1;
+    do
+    {
+        cout<<"---------------Menu-----------------"<<endl;
+        cout<<"1) calcular perimetro de un circulo "<<endl;
+        cout<<"2) Carlacular el area de un circulo "<<endl;
+        cout<<"0) Salir                            "<<endl;
+        cin>>opcion;
+
+        switch(opcion)
+        {
+        case 1:
+            cout<<"Ingrese el radio"<<endl;
+            cin>>r;
+            cir1.calperimetro(r);
+			cout<<"El perimetro es:"<<cir1.calperimetro(r)<<endl;
+            break;
+        case 2:   
+            cout<<"Ingrese el radio"<<endl;
+            cin>>r;
+            cir1.calarea(r);
+			cout<<"El area es:"<<cir1.calarea(r)<<endl;
+            break;
+            default:
+            cout<<"OPCION INVALIDA"<<endl;
+            break;
+           
+        }
+
+        }while(opcion!=0);
+
+}
